@@ -193,9 +193,6 @@
     --mono: 'IBM Plex Mono', ui-monospace, monospace;
     --display: 'Raceway', 'Golos Text', sans-serif;
 
-    --gh-font-heading: var(--sans);
-    --gh-font-body: var(--serif);
-
     --wrap: 808px;
     --prose: 680px;
 }
@@ -424,8 +421,8 @@ img { max-width: 100%; height: auto; }
 .card-title {
     position: relative;
     margin-top: 8px;
-    font-size: 36px;
-    line-height: 1.14;
+    font-size: 24px;
+    line-height: 1.24;
     font-weight: 500;
     letter-spacing: -0.015em;
     color: var(--white);
@@ -456,8 +453,8 @@ img { max-width: 100%; height: auto; }
 .row-body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .row-title {
     margin: 0;
-    font-size: 36px;
-    line-height: 1.14;
+    font-size: 22px;
+    line-height: 1.26;
     font-weight: 500;
     letter-spacing: -0.015em;
     text-wrap: pretty;
@@ -561,7 +558,7 @@ img { max-width: 100%; height: auto; }
 .prose {
     max-width: var(--prose);
     padding-top: 48px;
-    font-family: var(--gh-font-body);
+    font-family: var(--serif);
     font-size: 19px;
     line-height: 1.72;
     color: oklch(0.3 0.02 250);
@@ -573,7 +570,7 @@ img { max-width: 100%; height: auto; }
     color: oklch(0.26 0.02 250);
 }
 .prose h2, .prose h3, .prose h4 {
-    font-family: var(--gh-font-heading);
+    font-family: var(--sans);
     font-weight: 500;
     letter-spacing: -0.015em;
     color: var(--ink);
@@ -622,7 +619,7 @@ img { max-width: 100%; height: auto; }
     color: var(--ink-3);
     text-align: left;
 }
-.kg-width-wide { max-width: calc(var(--wrap) - 48px); margin-left: 50%; transform: translateX(-50%); }
+.kg-width-wide { width: min(calc(var(--wrap) - 48px), calc(100vw - 48px)); }
 .kg-width-full { width: 100vw; max-width: 100vw; margin-left: 50%; transform: translateX(-50%); }
 .kg-gallery-container { display: flex; flex-direction: column; gap: 8px; }
 .kg-gallery-row { display: flex; gap: 8px; }
@@ -781,6 +778,8 @@ img { max-width: 100%; height: auto; }
     font-size: 13px;
     color: oklch(0.72 0.01 250);
 }
+.site-foot-bottom a { color: inherit; }
+.site-foot-bottom a:hover { color: var(--brass-light); }
 
 /* --- responsive --------------------------------------------------------- */
 
