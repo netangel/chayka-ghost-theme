@@ -1,0 +1,23 @@
+{{!< default}}
+
+<header class="archive-head wrap">
+    <p class="mono archive-kicker">{{#is "tag"}}Рубрика{{/is}}{{#is "author"}}Автор{{/is}}</p>
+    <h1 class="archive-title">{{#tag}}{{name}}{{/tag}}{{#author}}{{name}}{{/author}}</h1>
+    {{#tag}}{{#if description}}<p class="archive-desc">{{description}}</p>{{/if}}{{/tag}}
+    {{#author}}{{#if bio}}<p class="archive-desc">{{bio}}</p>{{/if}}{{/author}}
+</header>
+
+<main class="wrap">
+    <div class="post-list post-list-flush">
+        {{#foreach posts}}
+        <article class="row">
+            <time class="row-date mono" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}<br>{{date format="YYYY"}}</time>
+            <div class="row-body">
+                <h3 class="row-title"><a href="{{url}}">{{title}}</a></h3>
+                <p class="row-excerpt">{{excerpt characters="180"}}</p>
+            </div>
+        </article>
+        {{/foreach}}
+    </div>
+    {{pagination}}
+</main>

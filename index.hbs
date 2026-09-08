@@ -1,0 +1,64 @@
+{{!< default}}
+
+{{#is "home"}}
+<section class="hero{{#if @site.cover_image}} hero-photo{{/if}}"{{#if @site.cover_image}} style="background-image: url({{img_url @site.cover_image size="xl"}})"{{/if}}>
+    <div class="hero-scrim"></div>
+    <div class="wrap hero-inner">
+        {{#if @site.description}}<p class="hero-eyebrow">{{@site.description}}</p>{{/if}}
+        <h1 class="hero-mark">{{@site.title}}</h1>
+    </div>
+</section>
+{{/is}}
+
+<main class="wrap">
+
+    {{#foreach posts limit="1"}}
+    <article class="lede">
+        <div class="meta">
+            {{#primary_tag}}<a class="meta-tag" href="{{url}}">{{name}}</a><span class="meta-dot"></span>{{/primary_tag}}
+            <time class="meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+        </div>
+        <h2 class="lede-title"><a href="{{url}}">{{title}}</a></h2>
+        <p class="lede-excerpt">{{excerpt characters="260"}}</p>
+        <div class="byline">
+            <span>От {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}</span>
+            <span>·</span>
+            <span>{{reading_time}}</span>
+        </div>
+    </article>
+    {{/foreach}}
+
+    {{#if posts.[1]}}
+    <div class="card-grid">
+        {{#foreach posts from="2" limit="2"}}
+        <article class="card">
+            <a class="card-media{{#unless feature_image}} card-media-empty{{/unless}}" href="{{url}}"{{#if feature_image}} style="background-image: url({{img_url feature_image size="l"}})"{{/if}}>
+                <span class="card-scrim"></span>
+                <span class="card-meta">
+                    {{#primary_tag}}{{name}} · {{/primary_tag}}{{date format="D MMM YYYY"}}
+                </span>
+                <span class="card-title">{{title}}</span>
+            </a>
+            <p class="card-excerpt">{{excerpt characters="150"}}</p>
+        </article>
+        {{/foreach}}
+    </div>
+    {{/if}}
+
+    {{#if posts.[3]}}
+    <div class="post-list">
+        {{#foreach posts from="4"}}
+        <article class="row">
+            <time class="row-date mono" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}<br>{{date format="YYYY"}}</time>
+            <div class="row-body">
+                <h3 class="row-title"><a href="{{url}}">{{title}}</a></h3>
+                <p class="row-excerpt">{{excerpt characters="180"}}</p>
+            </div>
+        </article>
+        {{/foreach}}
+    </div>
+    {{/if}}
+
+    {{pagination}}
+
+</main>

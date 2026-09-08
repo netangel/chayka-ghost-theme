@@ -1,0 +1,74 @@
+{{!< default}}
+
+{{#post}}
+<article class="post">
+
+    <header class="post-hero{{#if feature_image}} hero-photo{{/if}}"{{#if feature_image}} style="background-image: url({{img_url feature_image size="xl"}})"{{/if}}>
+        <div class="hero-scrim"></div>
+        <div class="wrap post-hero-inner">
+            <div class="meta meta-on-photo">
+                {{#primary_tag}}<a class="meta-tag" href="{{url}}">{{name}}</a><span class="meta-dot"></span>{{/primary_tag}}
+                <time class="meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+            </div>
+            <h1 class="post-title">{{title}}</h1>
+            <div class="byline byline-on-photo">
+                <span>От {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}</span>
+                <span>·</span>
+                <span>{{reading_time}}</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap">
+
+        <div class="prose">
+            {{#if custom_excerpt}}<p class="prose-lede">{{custom_excerpt}}</p>{{/if}}
+            {{content}}
+        </div>
+
+        {{#if tags}}
+        <div class="tag-row">
+            {{#foreach tags}}<a class="tag-chip" href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+        {{/if}}
+
+        {{#primary_author}}
+        <div class="author-box">
+            {{#if profile_image}}
+                <img class="author-avatar" src="{{img_url profile_image size="s"}}" alt="{{name}}">
+            {{else}}
+                <span class="author-avatar author-avatar-empty"></span>
+            {{/if}}
+            <div>
+                <div class="author-name">{{name}}</div>
+                {{#if bio}}<p class="author-bio">{{bio}}</p>{{/if}}
+            </div>
+        </div>
+        {{/primary_author}}
+
+        <nav class="post-nav">
+            {{#prev_post}}
+            <a class="post-nav-link" href="{{url}}">
+                <span class="mono post-nav-label">← предыдущая</span>
+                <span class="post-nav-title">{{title}}</span>
+            </a>
+            {{/prev_post}}
+            {{#next_post}}
+            <a class="post-nav-link post-nav-next" href="{{url}}">
+                <span class="mono post-nav-label">следующая →</span>
+                <span class="post-nav-title">{{title}}</span>
+            </a>
+            {{/next_post}}
+        </nav>
+
+        {{#unless @member}}
+        <aside class="post-cta">
+            <p>Новые записи журнала — на почту, без рекламы.</p>
+            <a class="btn btn-brass" href="#/portal/signup">Подписаться</a>
+        </aside>
+        {{/unless}}
+
+    </div>
+
+</article>
+{{/post}}

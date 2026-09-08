@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..600&amp;family=Golos+Text:wght@400..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    <header class="site-bar">
+        <div class="wrap site-bar-inner">
+            <a class="site-bar-mark" href="{{@site.url}}">{{@site.title}}</a>
+            {{navigation}}
+            <div class="site-bar-actions">
+                {{#unless @member}}
+                    <a class="btn btn-ghost" href="#/portal/signup">Подписаться</a>
+                {{else}}
+                    <a class="btn btn-ghost" href="#/portal/account">Аккаунт</a>
+                {{/unless}}
+            </div>
+        </div>
+    </header>
+
+    {{{body}}}
+
+    <footer class="site-foot">
+        <div class="wrap">
+            <div class="site-foot-top">
+                <div class="site-foot-cta">
+                    {{#unless @member}}
+                        <a class="btn btn-ghost" href="#/portal/signup">Подписаться</a>
+                    {{/unless}}
+                    <span class="site-foot-note">новые записи журнала на почту, без рекламы</span>
+                </div>
+                {{navigation type="secondary"}}
+            </div>
+            <div class="site-foot-bottom">
+                <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
+                <span class="mono">Ghost</span>
+            </div>
+        </div>
+    </footer>
+
+    {{ghost_foot}}
+</body>
+</html>
