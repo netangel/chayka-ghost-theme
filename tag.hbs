@@ -1,10 +1,9 @@
 {{!< default}}
 
 <header class="archive-head wrap">
-    <p class="mono archive-kicker">{{#is "tag"}}Рубрика{{/is}}{{#is "author"}}Автор{{/is}}</p>
-    <h1 class="archive-title">{{#tag}}{{name}}{{/tag}}{{#author}}{{name}}{{/author}}</h1>
+    <p class="mono archive-kicker">Рубрика</p>
+    <h1 class="archive-title">{{#tag}}{{name}}{{/tag}}</h1>
     {{#tag}}{{#if description}}<p class="archive-desc">{{description}}</p>{{/if}}{{/tag}}
-    {{#author}}{{#if bio}}<p class="archive-desc">{{bio}}</p>{{/if}}{{/author}}
 </header>
 
 <main class="wrap">

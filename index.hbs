@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{#is "home"}}
-<section class="hero{{#if @site.cover_image}} hero-photo{{/if}}"{{#if @site.cover_image}} style="background-image: url({{img_url @site.cover_image size="xl"}})"{{/if}}>
+<section class="hero{{#if @site.cover_image}} hero-photo{{/if}}" data-hero-height="{{@custom.hero_height}}"{{#if @site.cover_image}} style="background-image: url({{img_url @site.cover_image size="xl"}})"{{/if}}>
     <div class="hero-scrim"></div>
     <div class="wrap hero-inner">
         {{#if @site.description}}<p class="hero-eyebrow">{{@site.description}}</p>{{/if}}

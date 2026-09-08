@@ -3,10 +3,16 @@
   "description": "Chayka — sailing journal theme (Raceway + Lora + Golos Text)",
   "version": "1.0.0",
   "engines": {
-    "ghost": ">=5.0.0",
-    "ghost-api": "v5"
+    "ghost": ">=5.0.0"
   },
   "license": "MIT",
+  "author": {
+    "name": "Artemiy Krivopolenov",
+    "email": "akrivopolenov@gmail.com"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
   "screenshots": {
     "desktop": "assets/screenshot-desktop.jpg"
   },
