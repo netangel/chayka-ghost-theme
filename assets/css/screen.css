@@ -361,6 +361,8 @@ img { max-width: 100%; height: auto; }
     color: var(--ink-2);
     text-wrap: pretty;
 }
+.error-page { padding: 40px 24px 96px; }
+
 /* --- post --------------------------------------------------------------- */
 
 .post-hero {
