@@ -18,9 +18,9 @@
             {{navigation}}
             <div class="site-bar-actions">
                 {{#unless @member}}
-                    <a class="btn btn-ghost" href="#/portal/signup">Подписаться</a>
+                    <a class="btn btn-ghost" href="#/portal/signin" data-portal="signin">Войти</a>
                 {{else}}
-                    <a class="btn btn-ghost" href="#/portal/account">Аккаунт</a>
+                    <a class="btn btn-ghost" href="#/portal/account" data-portal="account">Аккаунт</a>
                 {{/unless}}
             </div>
         </div>

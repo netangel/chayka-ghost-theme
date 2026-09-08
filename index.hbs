@@ -19,11 +19,11 @@
             <time class="meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
         </div>
         <h2 class="lede-title"><a href="{{url}}">{{title}}</a></h2>
-        <p class="lede-excerpt">{{excerpt characters="260"}}</p>
+        <p class="lede-excerpt">{{excerpt words="35"}}</p>
         <div class="byline">
             <span>От {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}</span>
             <span>·</span>
-            <span>{{reading_time}}</span>
+            <span>{{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
         </div>
     </article>
     {{/foreach}}
@@ -39,7 +39,7 @@
                 </span>
                 <span class="card-title">{{title}}</span>
             </a>
-            <p class="card-excerpt">{{excerpt characters="150"}}</p>
+            <p class="card-excerpt">{{excerpt words="20"}}</p>
         </article>
         {{/foreach}}
     </div>
@@ -52,7 +52,7 @@
             <time class="row-date mono" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}<br>{{date format="YYYY"}}</time>
             <div class="row-body">
                 <h3 class="row-title"><a href="{{url}}">{{title}}</a></h3>
-                <p class="row-excerpt">{{excerpt characters="180"}}</p>
+                <p class="row-excerpt">{{excerpt words="24"}}</p>
             </div>
         </article>
         {{/foreach}}

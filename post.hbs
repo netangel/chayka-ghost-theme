@@ -14,7 +14,7 @@
             <div class="byline byline-on-photo">
                 <span>От {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}</span>
                 <span>·</span>
-                <span>{{reading_time}}</span>
+                <span>{{reading_time seconds=(t "< 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
             </div>
         </div>
     </header>
@@ -60,13 +60,6 @@
             </a>
             {{/next_post}}
         </nav>
-
-        {{#unless @member}}
-        <aside class="post-cta">
-            <p>Новые записи журнала — на почту, без рекламы.</p>
-            <a class="btn btn-brass" href="#/portal/signup">Подписаться</a>
-        </aside>
-        {{/unless}}
 
     </div>
 
