@@ -676,6 +676,11 @@ img { max-width: 100%; height: auto; }
     text-wrap: pretty;
 }
 
+.post-comments {
+    max-width: var(--prose);
+    margin: 40px 0 0;
+}
+
 .post-nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
