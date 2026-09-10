@@ -52,7 +52,12 @@
                 host: 'https://remark42.dwal.in',
                 site_id: 'chayka',
                 theme: 'light',
-                locale: '{{@site.locale}}',
+		locale: '{{@site.locale}}',
+		__colors__: {
+  			'--primary-background-color': '245, 240, 230',   // paper
+  			'--primary-text-color': '34, 41, 61',            // navy/ink
+  			'--primary-color': '19, 83, 114',                // sea
+		}
             };
             !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),d=n.head||n.body;r.type="module",r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+".mjs",d.appendChild(r)}}(remark_config.components||["embed"],document);
         </script>
