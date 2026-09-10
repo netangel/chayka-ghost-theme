@@ -11,9 +11,7 @@
     var groups = [];
 
     document.querySelectorAll('.kg-gallery-card').forEach(function (card) {
-        var imgs = Array.prototype.slice.call(card.querySelectorAll('.kg-gallery-image img')).filter(function (img) {
-            return !isPortrait(img);
-        });
+        var imgs = Array.prototype.slice.call(card.querySelectorAll('.kg-gallery-image img'));
         if (!imgs.length) return;
         var caption = card.querySelector('figcaption');
         groups.push({ imgs: imgs, caption: caption ? caption.textContent.trim() : '' });
