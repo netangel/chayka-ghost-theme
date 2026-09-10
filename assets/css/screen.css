@@ -592,7 +592,7 @@ img { max-width: 100%; height: auto; }
 .kg-gallery-container { display: flex; flex-direction: column; gap: 8px; }
 .kg-gallery-row { display: flex; gap: 8px; }
 .kg-gallery-image img { display: block; width: 100%; height: auto; }
-.kg-gallery-image img, .prose .kg-image-card img { cursor: zoom-in; }
+.kg-gallery-image img.is-zoomable, .prose .kg-image-card img.is-zoomable { cursor: zoom-in; }
 
 /* Lightbox */
 html.lightbox-lock { overflow: hidden; }

@@ -2,10 +2,18 @@
 (function () {
     'use strict';
 
+    function isPortrait(img) {
+        var w = parseInt(img.getAttribute('width'), 10);
+        var h = parseInt(img.getAttribute('height'), 10);
+        return !!w && !!h && h > w;
+    }
+
     var groups = [];
 
     document.querySelectorAll('.kg-gallery-card').forEach(function (card) {
-        var imgs = Array.prototype.slice.call(card.querySelectorAll('.kg-gallery-image img'));
+        var imgs = Array.prototype.slice.call(card.querySelectorAll('.kg-gallery-image img')).filter(function (img) {
+            return !isPortrait(img);
+        });
         if (!imgs.length) return;
         var caption = card.querySelector('figcaption');
         groups.push({ imgs: imgs, caption: caption ? caption.textContent.trim() : '' });
@@ -13,7 +21,7 @@
 
     document.querySelectorAll('.kg-card.kg-image-card').forEach(function (card) {
         var img = card.querySelector('img');
-        if (!img) return;
+        if (!img || isPortrait(img)) return;
         var caption = card.querySelector('figcaption');
         groups.push({ imgs: [img], caption: caption ? caption.textContent.trim() : (img.alt || '') });
     });
@@ -127,6 +135,7 @@
     }
 
     lookup.forEach(function (entry, img) {
+        img.classList.add('is-zoomable');
         img.addEventListener('click', function () { open(img); });
     });
 
