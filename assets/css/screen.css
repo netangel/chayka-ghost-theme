@@ -162,7 +162,7 @@
     --display: 'Raceway', 'Golos Text', sans-serif;
 
     --wrap: 808px;
-    --prose: 680px;
+    --prose: 760px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -579,6 +579,11 @@ img { max-width: 100%; height: auto; }
 
 /* Koenig cards */
 .prose figure, .prose .kg-card { margin: 32px 0; }
+.prose .kg-image-card:not(.kg-width-wide):not(.kg-width-full) {
+    max-width: calc(var(--prose) * 0.9);
+    margin-left: auto;
+    margin-right: auto;
+}
 .prose figcaption, .prose .kg-image-card figcaption {
     margin: 10px 0 0;
     font-family: var(--mono);
